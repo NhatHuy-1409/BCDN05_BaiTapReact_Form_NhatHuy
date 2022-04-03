@@ -37,6 +37,7 @@ export const manageStuReducer = (state = student, action) => {
             state.isDisable = true
             return { ...state }
         case 'UPDATE_STUDENT':
+            state.isSearching = false
             let arrUpate = [...state.listStu]
             let indexUpdate = arrUpate.findIndex(stu => stu.maSV === action.infoUpdate.maSV)
             arrUpate[indexUpdate] = action.infoUpdate
