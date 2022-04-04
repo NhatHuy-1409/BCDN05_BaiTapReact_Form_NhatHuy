@@ -29,6 +29,7 @@ export const manageStuReducer = (state = student, action) => {
             state.listStu = [...state.listStu, action.info]
             return { ...state }
         case 'DELETE_STUDENT':
+            state.isSearching = false
             state.listStu = state.listStu.filter(stu => stu.maSV !== action.info)
             //filter return new array
             return { ...state }
